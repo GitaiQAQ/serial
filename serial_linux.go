@@ -131,6 +131,10 @@ type Port struct {
 	f *os.File
 }
 
+func (p *Port) File() *os.File {
+	return p.f
+}
+
 func (p *Port) Read(b []byte) (n int, err error) {
 	return p.f.Read(b)
 }

@@ -93,6 +93,10 @@ func (p *Port) Close() error {
 	return p.f.Close()
 }
 
+func (p *Port) File() *os.File {
+	return p.f
+}
+
 func (p *Port) Write(buf []byte) (int, error) {
 	p.wl.Lock()
 	defer p.wl.Unlock()
